@@ -1,8 +1,10 @@
+import AboutIntro from "@/components/about/AboutIntro";
+
 const AboutPage = () => {
   return (
-    <div>
-      <h1>About Page</h1>
-    </div>
+    <>
+      <AboutIntro />
+    </>
   );
 };
 
