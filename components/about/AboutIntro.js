@@ -16,7 +16,7 @@ const AboutIntro = () => {
       <p className={classes.paraTwo}>
         Moving forward, I'm looking to move into Front End Development and
         become a Software Engineer. I enjoy creating beautiful UI's and
-        recreating wonderful designs.
+        recreating wonderful designs as well getting curious with new technologies.
       </p>
       <div className={classes.skillTitle}>
         <p>Here is what I enjoy working with when it comes to Front End:</p>
