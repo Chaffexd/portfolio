@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+.navigation {
+    display: flex;
+    list-style-type: none;
+    padding: 1em;
+}
+
+.navigation li {
+    margin-left: 1.5em;
+}
+
+.home {
+    padding: 1em;
+}
