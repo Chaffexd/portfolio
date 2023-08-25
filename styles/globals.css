@@ -18,3 +18,18 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+html {
+	height: 100%;
+}
+
+#__next {
+	height: 100vh;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}

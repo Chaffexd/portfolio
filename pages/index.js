@@ -1,6 +1,10 @@
+import LandingInfo from "@/components/landing/LandingInfo";
+
 const HomePage = () => {
   return (
-    <div>Hello, I'm Shane</div>
+    <>
+      <LandingInfo />
+    </>
   );
 };
 
