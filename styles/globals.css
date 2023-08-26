@@ -26,10 +26,3 @@ html {
 #__next {
 	height: 100vh;
 }
-
-main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex: 1;
-}

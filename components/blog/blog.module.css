@@ -1,0 +1,11 @@
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1.5em;
+}
+
+.ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}

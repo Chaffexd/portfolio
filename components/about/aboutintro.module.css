@@ -1,6 +1,7 @@
 .info {
     width: 35em;
-    margin-top: 5em;
+    margin-top: 5em !important;
+    margin: 0 auto;
 }
 
 .title {
@@ -28,4 +29,3 @@
     margin-top: 1em;
     margin-bottom: 1em;
 }
-
