@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
 
 import classes from "./posts.module.css";
 import PostCard from "../ui/PostCard";
 import Button from "../ui/Button";
-import ArrowRight from "../icons/ArrowRight";
 
 const contentful = require("contentful");
 const client = contentful.createClient({
@@ -38,11 +36,6 @@ const Posts = ({ text }) => {
             <h1>{post.fields.postTitle}</h1>
             <div className={classes.tile}>
               <Button link={`/blog/${post.sys.id}`} text={"Read More"} />
-              <span>
-                <Link href={`/blog/${post.sys.id}`}>
-                  <ArrowRight />
-                </Link>
-              </span>
             </div>
           </li>
         </PostCard>

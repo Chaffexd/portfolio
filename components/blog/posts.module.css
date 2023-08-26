@@ -15,5 +15,9 @@
 
 .tile {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla( 0,0%,95% ,1);
+    border-radius: 5px;
+    padding: .4em;
 }
