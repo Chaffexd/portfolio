@@ -6,9 +6,3 @@
     width: 15rem;
     height: 15rem;
 }
-
-.postCard:hover {
-    cursor: pointer;
-    background-color: lightgrey;
-    transition: .2s ease-in;
-}

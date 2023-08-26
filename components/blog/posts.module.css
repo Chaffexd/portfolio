@@ -21,3 +21,9 @@
     border-radius: 5px;
     padding: .4em;
 }
+
+.tile:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+    transition: .2s ease-in;
+}
