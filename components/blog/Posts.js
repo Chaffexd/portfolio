@@ -31,7 +31,7 @@ const Posts = ({ text }) => {
   }
 
   if (!posts) {
-    return <p>Something went wrong...</p>
+    return <p>Something went wrong...</p>;
   }
 
   return (
@@ -43,9 +43,9 @@ const Posts = ({ text }) => {
               <PostDate postDate={formatDate(post.fields.postDate)} />
               <h1 className={classes.title}>{post.fields.postTitle}</h1>
             </div>
-              <div className={classes.tile}>
-                <Button link={`/blog/${post.sys.id}`} text={"Read More"} />
-              </div>
+            <div className={classes.tile}>
+              <Button link={`/blog/${post.sys.id}`} text={"Read More"} />
+            </div>
           </li>
         </PostCard>
       ))}

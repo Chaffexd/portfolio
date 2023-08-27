@@ -6,7 +6,7 @@ const Blog = () => {
 
   return (
     <div className={classes.tileParent}>
-      <h1 className={classes.title}>Blog Feed, welcome to my thoughts...</h1>
+      <h1 className={classes.title}>Stuff that I wrote ✍🏻</h1>
       <div>
         <ul className={classes.ul}>
             <Posts />
