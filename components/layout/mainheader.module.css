@@ -16,6 +16,35 @@
     margin-left: 1.5em;
 }
 
+.navigation li a {
+    text-decoration: none;
+    position: relative;
+    color: black;
+}
+
+.navigation li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.navigation li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
 .home {
     padding: 1em;
+}
+
+.active {
+    color: pink !important
 }

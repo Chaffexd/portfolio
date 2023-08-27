@@ -1,33 +1,43 @@
 import { useRouter } from "next/router";
 import { createClient } from "contentful";
-import Button from "@/components/ui/Button";
+import Head from "next/head";
+import Post from "@/components/blog/Post";
 
 const BlogDetailPage = ({ entry }) => {
   const router = useRouter();
+  const { postTitle, postDate } = entry.fields;
+  const blogPost = entry.fields.postBody.content[0].content[0].value;
 
+  console.log(router.query)
   const blogId = router.query.blogId;
   console.log(blogId);
-
-  const { postTitle } = entry.fields;
-  const blogPost = entry.fields.postBody.content[0].content[0].value;
 
   if (router.isFallback) {
     return <p>Loading...</p>;
   }
 
+  if(!entry) {
+    return <p>Loading...</p>
+  }
+
   return (
-    <div>
-        <h1>{postTitle}</h1>
-        <p>{blogPost}</p>
-        <Button link={"/blog"} text={"Go back"} />
-    </div>
+    <>
+      <Head>
+        <title>{postTitle}</title>
+        <meta
+          name={postTitle}
+          content={blogPost}
+        />
+      </Head>
+      <Post postTitle={postTitle} blogPost={blogPost} postDate={postDate} />
+    </>
   );
 };
 
 export async function getStaticPaths() {
   const client = createClient({
-    space: "svpfxqr57hom",
-    accessToken: "cD8nXddmmbBiviPwqREwP7GVe9cjrLxcqAO67fyMvfE",
+    space: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
   const entries = await client.getEntries({
@@ -46,8 +56,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const client = createClient({
-    space: "svpfxqr57hom",
-    accessToken: "cD8nXddmmbBiviPwqREwP7GVe9cjrLxcqAO67fyMvfE",
+    space: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
   // Fetch the specific blog post based on the blogId

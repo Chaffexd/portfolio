@@ -1,8 +1,9 @@
+import classes from './projects.module.css';
 
 const Projects = () => {
   return (
-    <div>
-        <h1>Projects, create projects and list them here to be shared</h1>
+    <div className={classes.projectsMain}>
+        <h1>To be continued...</h1>
     </div>
   )
 }

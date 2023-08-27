@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
+import { createClient } from "contentful";
+import formatDate from "../../helpers";
 
 import classes from "./posts.module.css";
 import PostCard from "../ui/PostCard";
 import Button from "../ui/Button";
+import PostDate from "../ui/PostDate";
 
-const contentful = require("contentful");
-const client = contentful.createClient({
-  space: "svpfxqr57hom",
-  accessToken: "cD8nXddmmbBiviPwqREwP7GVe9cjrLxcqAO67fyMvfE",
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
 const Posts = ({ text }) => {
@@ -28,15 +30,22 @@ const Posts = ({ text }) => {
     return <p>Loading...</p>;
   }
 
+  if (!posts) {
+    return <p>Something went wrong...</p>
+  }
+
   return (
     <>
       {posts.map((post) => (
         <PostCard key={post.sys.id}>
           <li className={classes.posts}>
-            <h1>{post.fields.postTitle}</h1>
-            <div className={classes.tile}>
-              <Button link={`/blog/${post.sys.id}`} text={"Read More"} />
+            <div>
+              <PostDate postDate={formatDate(post.fields.postDate)} />
+              <h1 className={classes.title}>{post.fields.postTitle}</h1>
             </div>
+              <div className={classes.tile}>
+                <Button link={`/blog/${post.sys.id}`} text={"Read More"} />
+              </div>
           </li>
         </PostCard>
       ))}
