@@ -9,7 +9,7 @@ const LandingInfo = () => {
     <div>
       <h1 className={classes.title}>
         <p>Hello, I'm <span className={classes.name}>Shane</span> 👋🏻 🇬🇧</p>
-        <div>
+        <div className={classes.typewriter}>
           <Typewriter 
               options={{
                 strings: ["Technical Support Engineer", "Software Engineer","Front End Engineer"],
