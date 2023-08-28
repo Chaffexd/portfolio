@@ -29,6 +29,8 @@
 .tile a {
     color: rgb(84, 80, 80);
     text-decoration: none;
+    width: 100%;
+    text-align: center;
 }
 
 .title {
