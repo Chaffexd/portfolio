@@ -5,20 +5,17 @@ import Post from "@/components/blog/Post";
 
 const BlogDetailPage = ({ entry }) => {
   const router = useRouter();
-  const { postTitle, postDate } = entry.fields;
-  const blogPost = entry?.fields?.postBody?.content[0]?.content[0]?.value;
 
-  console.log(router.query)
-  const blogId = router.query.blogId;
-  console.log(blogId);
+  if(!entry) {
+    return <p>Loading...</p>
+  }
 
   if (router.isFallback) {
     return <p>Loading...</p>;
   }
 
-  if(!entry) {
-    return <p>Loading...</p>
-  }
+  const { postTitle, postDate } = entry?.fields;
+  const blogPost = entry?.fields?.postBody?.content[0]?.content[0]?.value;
 
   return (
     <>
@@ -67,6 +64,7 @@ export async function getStaticProps({ params }) {
     props: {
       entry, // Pass the fetched entry as a prop
     },
+    revalidate: 60
   };
 }
 
