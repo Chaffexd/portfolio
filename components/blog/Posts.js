@@ -43,8 +43,11 @@ const Posts = ({ text }) => {
               <PostDate postDate={formatDate(post.fields.postDate)} />
               <h1 className={classes.title}>{post.fields.postTitle}</h1>
             </div>
-            <div className={classes.tile}>
-              <Button link={`/blog/${post.sys.id}`} text={"Read More"} />
+            <div className={classes.tileFooter}>
+              <p className={classes.tags}>{post.fields.tags}</p>
+              <div className={classes.tile}>
+                <Button link={`/blog/${post.sys.id}`} text={"Read More"} />
+              </div>
             </div>
           </li>
         </PostCard>
