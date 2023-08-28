@@ -6,8 +6,8 @@ import Post from "@/components/blog/Post";
 const BlogDetailPage = ({ entry }) => {
   const router = useRouter();
 
-  if(!entry) {
-    return <p>Loading...</p>
+  if (!entry) {
+    return <p>Loading...</p>;
   }
 
   if (router.isFallback) {
@@ -21,10 +21,7 @@ const BlogDetailPage = ({ entry }) => {
     <>
       <Head>
         <title>{postTitle}</title>
-        <meta
-          name={postTitle}
-          content={blogPost}
-        />
+        <meta name={postTitle} content={blogPost} />
       </Head>
       <Post postTitle={postTitle} blogPost={blogPost} postDate={postDate} />
     </>
@@ -60,11 +57,16 @@ export async function getStaticProps({ params }) {
   // Fetch the specific blog post based on the blogId
   const entry = await client.getEntry(params.blogId);
 
+  // this will now return a 404 page for a page that doesn't exist
+  if (!entry) {
+    return { notFound: true };
+  }
+
   return {
     props: {
       entry, // Pass the fetched entry as a prop
     },
-    revalidate: 60
+    revalidate: 60,
   };
 }
 
