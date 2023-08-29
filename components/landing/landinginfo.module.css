@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
-    width: 30em;
+    width: 25%;
 }
 
 .socials a {
@@ -23,4 +23,10 @@
 
 .typewriter {
     height: 1.5em;
+}
+
+@media only screen and (max-width: 600px) {
+    .socials {
+        width: 20em;
+    }
 }
