@@ -27,7 +27,12 @@ export async function getStaticProps() {
   const blogPosts = await client.getEntries();
 
   if (!blogPosts) {
-    return { notFound: true };
+    return { 
+      notFound: true,
+      redirect: {
+        destination: '/blog/'
+      }
+    };
   }
 
   return {

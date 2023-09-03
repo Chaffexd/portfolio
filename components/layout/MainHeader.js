@@ -8,7 +8,7 @@ const MainHeader = () => {
   return (
     <header className={classes.header}>
       <div className={classes.home}>
-        <Link href={"/"}>To home, add an image?</Link>
+        <Link href={"/"}>A link to home</Link>
       </div>
       <nav>
         <ul className={classes.navigation}>
